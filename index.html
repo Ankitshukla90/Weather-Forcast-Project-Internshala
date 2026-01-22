@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoYo Weather App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-slate-900 text-white min-h-screen transition-all duration-700" id="body-bg">
+    
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Search Section -->
+        <header class="text-center mb-10">
+            <h1 class="text-5xl font-extrabold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">YoYo Weather App</h1>
+            
+            <div class="relative flex flex-col md:flex-row gap-3 justify-center items-center">
+                <div class="relative w-full md:w-2/3">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fas fa-city text-slate-500"></i>
+                    </div>
+                    <input type="text" id="city-input" placeholder="Search city (e.g. London, Tokyo)..." 
+                        class="w-full pl-10 pr-4 py-4 rounded-2xl bg-slate-800/80 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-lg">
+                    
+                    <!-- Recent Searches Dropdown -->
+                    <div id="recent-dropdown" class="absolute hidden w-full mt-2 bg-slate-800 border border-slate-700 rounded-xl shadow-2xl z-50 overflow-hidden text-left">
+                        
+                    </div>
+                </div>
+                
+                <div class="flex gap-2 w-full md:w-auto">
+                    <button id="search-btn" class="flex-1 md:flex-none px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-2xl font-bold shadow-lg transition-all active:scale-95">
+                        Search
+                    </button>
+                    <button id="current-location-btn" class="px-5 py-4 bg-emerald-600 hover:bg-emerald-500 rounded-2xl font-bold shadow-lg transition-all active:scale-95" title="Use Current Location">
+                        <i class="fas fa-location-crosshairs"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Custom Error Message -->
+            <div id="error-msg" class="hidden mt-6 p-4 bg-red-500/20 border border-red-500/50 text-red-200 rounded-xl backdrop-blur-md"></div>
+        </header>
+
+        <!-- Extreme Heat Alert -->
+        <div id="temp-alert" class="hidden mb-6 p-4 bg-orange-600 text-white rounded-2xl animate-bounce flex items-center shadow-lg">
+            <i class="fas fa-triangle-exclamation mr-3 text-2xl"></i>
+            <span class="font-bold uppercase tracking-wide">Extreme Heat Alert: Temperature exceeds 40°C!</span>
+        </div>
+
+        <!-- Main Display -->
+        <main id="weather-display" class="hidden space-y-10">
+            <!-- Current Weather Card -->
+            <section class="bg-white/10 backdrop-blur-xl p-8 rounded-[2rem] border border-white/10 shadow-2xl">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div class="text-center md:text-left">
+                        <h2 id="city-name" class="text-4xl font-black mb-2 tracking-tight">--</h2>
+                        <p id="current-date" class="text-blue-300 font-medium opacity-80 uppercase tracking-widest text-sm mb-6">--</p>
+                        
+                        <div class="flex items-center justify-center md:justify-start gap-4">
+                            <img id="weather-icon" src="" alt="" class="w-32 h-32 drop-shadow-2xl">
+                            <div>
+                                <div class="flex items-start">
+                                    <span id="temp-display" class="text-8xl font-black tracking-tighter">--</span>
+                                    <button id="unit-toggle" class="mt-4 ml-1 text-2xl font-bold text-blue-400 hover:scale-110 transition cursor-pointer">°C</button>
+                                </div>
+                                <p id="weather-desc" class="text-2xl capitalize font-light text-slate-300 tracking-wide">--</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4 w-full md:w-auto">
+                        <div class="bg-black/20 p-6 rounded-3xl border border-white/5 flex flex-col items-center justify-center min-w-[120px]">
+                            <i class="fas fa-droplet text-blue-400 text-3xl mb-3"></i>
+                            <p class="text-xs uppercase text-slate-400 font-bold">Humidity</p>
+                            <p id="humidity" class="text-xl font-black">--%</p>
+                        </div>
+                        <div class="bg-black/20 p-6 rounded-3xl border border-white/5 flex flex-col items-center justify-center min-w-[120px]">
+                            <i class="fas fa-wind text-emerald-400 text-3xl mb-3"></i>
+                            <p class="text-xs uppercase text-slate-400 font-bold">Wind</p>
+                            <p id="wind-speed" class="text-xl font-black">-- m/s</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5-Day Forecast -->
+            <section>
+                <h3 class="text-2xl font-black mb-6 ml-2 flex items-center">
+                    <i class="far fa-calendar-alt mr-3 text-blue-400"></i>5-Day Extended Forecast
+                </h3>
+                <div id="forecast-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                    <!-- Forecast cards injected here -->
+                </div>
+            </section>
+        </main>
+
+        <div id="initial-msg" class="text-center py-32 opacity-40">
+            <i class="fas fa-cloud-sun-rain text-8xl mb-6 block"></i>
+            <p class="text-xl font-medium uppercase tracking-widest">Enter a city to explore weather</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
