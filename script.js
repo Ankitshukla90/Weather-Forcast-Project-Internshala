@@ -56,7 +56,7 @@ async function fetchWeather(query) {
 
         if (!res.ok) throw new Error(data.error.message);
 
-        currentData = data; // Save globally for unit toggling
+        currentData = data; 
         displayWeather(data);
         saveRecent(data.location.name);
         

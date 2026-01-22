@@ -4,7 +4,6 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-/* Rain Effect Background */
 .bg-rainy {
     background: linear-gradient(to bottom, #203a43, #2c5364);
     position: relative;
