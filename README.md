@@ -1,6 +1,6 @@
-YoYo Weather App
+Skycast Weather App
 
-YoYo Weather App is a modern, responsive weather forecasting application that provides real-time atmospheric data and 5-day extended forecasts. Built with Vanilla JavaScript and Tailwind CSS, the application features dynamic theming, intelligent search history, and geolocation integration.
+SkyCast Weather App is a modern, responsive weather forecasting application that provides real-time atmospheric data and 5-day extended forecasts. Built with Vanilla JavaScript and Tailwind CSS, the application features dynamic theming, intelligent search history, and geolocation integration.
 
 Key Features
 
