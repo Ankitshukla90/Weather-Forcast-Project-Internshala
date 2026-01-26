@@ -52,3 +52,7 @@ Replace the API_KEY constant with your unique key:
 code
 JavaScript
 const API_KEY = 'your_api_key_here';
+
+
+screenshot:
+![ss1](2026-01-26.png) ![ss2](<2026-01-26 (1).png>)
