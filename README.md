@@ -41,10 +41,8 @@ Project Structure
 
 Setup Instructions
 
-Clone the Repository: https://github.com/Ankitshukla90/Weather-Forcast-Project-Internshala.git
-code
-Bash
-git clone 
+Clone the Repository: gh repo clone Ankitshukla90/Weather-Forcast-Project-Internshala
+clone : https://github.com/Ankitshukla90/Weather-Forcast-Project-Internshala.git
 
 
 API Configuration:
